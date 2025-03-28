@@ -15,8 +15,8 @@ user_ids = {
 
 # Расписание: ДАТА -> ИМЯ
 schedule = {
-    "2025-03-27": "Таня",
-    "2025-03-29": "Катя",
+    "2025-03-29": "Таня",
+    #"2025-03-29": "Катя",
     "2025-03-30": "Катя",
     "2025-03-31": "Таня",
     "2025-04-01": "Диана Б.",
@@ -58,7 +58,7 @@ async def send_trash_reminder():
 
 async def main():
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(send_trash_reminder, "cron", hour=23, minute=48)
+    scheduler.add_job(send_trash_reminder, "cron", hour=0, minute=20)
     scheduler.start()
 
     print("✅ Бот запущен. Ждём 8:00 каждый день ⏰")
